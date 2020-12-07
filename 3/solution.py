@@ -2,18 +2,24 @@ import numpy as np
 
 
 def get_matrix():
-    with open('matrix.txt', 'r') as f:
+    with open("matrix.txt", "r") as f:
         return np.array([np.array(list(line.strip())) for line in f.readlines()])
 
 
 def get_wordlist():
-    with open('wordlist.txt', 'r') as f:
+    with open("wordlist.txt", "r") as f:
         return [line.strip() for line in f.readlines()]
 
 
 def get_matrix_as_strings(matrix):
-    lr_diagonals = ["".join(np.diagonal(matrix, offset=k)) for k in range(-len(matrix[:, 0])+1, len(matrix[0, :]))]
-    rl_diagonals = ["".join(np.fliplr(matrix).diagonal(offset=k)) for k in range(-len(matrix)+1, len(matrix))]
+    lr_diagonals = [
+        "".join(np.diagonal(matrix, offset=k))
+        for k in range(-len(matrix[:, 0]) + 1, len(matrix[0, :]))
+    ]
+    rl_diagonals = [
+        "".join(np.fliplr(matrix).diagonal(offset=k))
+        for k in range(-len(matrix) + 1, len(matrix))
+    ]
     columns = ["".join(matrix[:, i]) for i in range(len(matrix[:, 0]))]
     rows = ["".join(matrix[i, :]) for i in range(len(matrix[0, :]))]
 

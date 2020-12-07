@@ -1,7 +1,9 @@
 def area(coordinates):
     area = 0
     for i in range(len(coordinates)):
-        area += (coordinates[i-1][0] + coordinates[i][0]) * (coordinates[i-1][1] - coordinates[i][1])
+        area += (coordinates[i - 1][0] + coordinates[i][0]) * (
+            coordinates[i - 1][1] - coordinates[i][1]
+        )
 
     return -area / 2
 

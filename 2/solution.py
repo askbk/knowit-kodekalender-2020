@@ -5,8 +5,8 @@ def find_prime(n):
     for i in range(n, 2, -1):
         is_prime = True
 
-        for j in range(2, i//2):
-            if i%j == 0:
+        for j in range(2, i // 2):
+            if i % j == 0:
                 is_prime = False
                 break
 
@@ -42,5 +42,6 @@ def count_delivered_gifts(population):
         count += 1
 
     return count
+
 
 print(count_delivered_gifts(5433000))
